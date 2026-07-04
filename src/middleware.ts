@@ -1,7 +1,6 @@
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-// Rutas que requieren login
 const PROTECTED = ['/dashboard', '/historial', '/resultado', '/content-generator']
 
 export async function middleware(request: NextRequest) {
@@ -18,7 +17,7 @@ export async function middleware(request: NextRequest) {
     {
       cookies: {
         getAll() { return request.cookies.getAll() },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) {
           cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
           response = NextResponse.next({ request })
           cookiesToSet.forEach(({ name, value, options }) =>
@@ -31,12 +30,10 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Sin sesión → login
   if (!user) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  // Whitelist: solo el email de Juana (y el tuyo)
   const allowed = (process.env.ALLOWED_EMAIL || '').split(',').map(e => e.trim().toLowerCase())
   if (!allowed.includes((user.email || '').toLowerCase())) {
     return NextResponse.redirect(new URL('/login?error=no-autorizado', request.url))
