@@ -1,0 +1,14 @@
+"use strict";(()=>{var e={};e.id=358,e.ids=[358],e.modules={399:e=>{e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},517:e=>{e.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},7147:e=>{e.exports=require("fs")},3685:e=>{e.exports=require("http")},5687:e=>{e.exports=require("https")},7561:e=>{e.exports=require("node:fs")},4492:e=>{e.exports=require("node:stream")},1017:e=>{e.exports=require("path")},5477:e=>{e.exports=require("punycode")},2781:e=>{e.exports=require("stream")},7310:e=>{e.exports=require("url")},3837:e=>{e.exports=require("util")},1267:e=>{e.exports=require("worker_threads")},9796:e=>{e.exports=require("zlib")},7503:(e,r,t)=>{t.r(r),t.d(r,{originalPathname:()=>m,patchFetch:()=>g,requestAsyncStorage:()=>x,routeModule:()=>u,serverHooks:()=>d,staticGenerationAsyncStorage:()=>l});var a={};t.r(a),t.d(a,{POST:()=>c});var o=t(9303),n=t(8716),s=t(670),i=t(7070);let p=new(t(6068)).ZP({apiKey:process.env.ANTHROPIC_API_KEY});async function c(e){try{let{type:r,ideas:t}=await e.json(),a=await p.messages.create({model:"claude-haiku-4-5-20251001",max_tokens:300,messages:[{role:"user",content:`Eres copywriter experta en marcas hol\xedsticas para Instagram en Espa\xf1a.
+
+Escribe UN caption corto (m\xe1x 3 l\xedneas) para Instagram sobre: ${t.join(", ")}
+
+Contexto: cuenta de ${{tarot:"tarot y lectura de cartas",reiki:"reiki y energ\xeda",holistico:"terapia hol\xedstica y bienestar",motivacional:"crecimiento personal y motivaci\xf3n"}[r]||r}. P\xfablico: mujeres 40-60 a\xf1os. Tono: c\xe1lido, aut\xe9ntico, sin clich\xe9s esot\xe9ricos baratos.
+
+Reglas:
+- M\xe1ximo 3 l\xedneas
+- 1-2 emojis m\xe1ximo
+- Sin hashtags (van aparte)
+- Sin "garantizo", "predigo" ni promesas
+- Termina con pregunta o llamada suave a la acci\xf3n
+
+Solo escribe el caption, nada m\xe1s.`}]}),o="text"===a.content[0].type?a.content[0].text.trim():"";return i.NextResponse.json({caption:o},{status:200})}catch(e){return console.error("Error generating content:",e?.message),i.NextResponse.json({error:"Error generando contenido"},{status:500})}}let u=new o.AppRouteRouteModule({definition:{kind:n.x.APP_ROUTE,page:"/api/generate-content/route",pathname:"/api/generate-content",filename:"route",bundlePath:"app/api/generate-content/route"},resolvedPagePath:"C:\\Users\\Voice74\\MIREIA VILLAR LORENTE\\Sibila-26\\src\\app\\api\\generate-content\\route.ts",nextConfigOutput:"",userland:a}),{requestAsyncStorage:x,staticGenerationAsyncStorage:l,serverHooks:d}=u,m="/api/generate-content/route";function g(){return(0,s.patchFetch)({serverHooks:d,staticGenerationAsyncStorage:l})}}};var r=require("../../../webpack-runtime.js");r.C(e);var t=e=>r(r.s=e),a=r.X(0,[948,972,68],()=>t(7503));module.exports=a})();

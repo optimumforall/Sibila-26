@@ -1,0 +1,11 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/generate-content/route": "app/api/generate-content/route.js",
+  "/app/page": "app/app/page.js",
+  "/aviso-legal/page": "app/aviso-legal/page.js",
+  "/page": "app/page.js",
+  "/privacidad/page": "app/privacidad/page.js",
+  "/api/analyses/route": "app/api/analyses/route.js",
+  "/api/analyses/[id]/route": "app/api/analyses/[id]/route.js",
+  "/api/analyze/route": "app/api/analyze/route.js"
+}
