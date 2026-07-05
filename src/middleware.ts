@@ -1,3 +1,4 @@
+@"
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
@@ -21,18 +22,27 @@ export async function middleware(request: NextRequest) {
   )
   const { data: { user } } = await supabase.auth.getUser()
   const { pathname } = request.nextUrl
+
   if (pathname === '/login' || pathname.startsWith('/auth')) {
     return supabaseResponse
   }
+
   if (!user) return NextResponse.redirect(new URL('/login', request.url))
+
   const allowedEmail = process.env.ALLOWED_EMAIL
   if (user.email !== allowedEmail) {
     await supabase.auth.signOut()
     return NextResponse.redirect(new URL('/login?error=no_access', request.url))
   }
+
   return supabaseResponse
 }
 
 export const config = {
   matcher: ['/dashboard/:path*', '/historial/:path*', '/resultado/:path*', '/content-generator/:path*'],
 }
+"@ | Set-Content src\middleware.ts -Encoding UTF8
+
+git add src\middleware.ts
+git commit -m "fix: middleware limpio"
+git push origin main
