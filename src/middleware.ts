@@ -1,4 +1,3 @@
-@"
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
@@ -41,8 +40,3 @@ export async function middleware(request: NextRequest) {
 export const config = {
   matcher: ['/dashboard/:path*', '/historial/:path*', '/resultado/:path*', '/content-generator/:path*'],
 }
-"@ | Set-Content src\middleware.ts -Encoding UTF8
-
-git add src\middleware.ts
-git commit -m "fix: middleware limpio"
-git push origin main
