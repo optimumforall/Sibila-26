@@ -357,14 +357,8 @@ nav{
     inset 0 1px 0 rgba(255,255,255,0.4);
   border: 1px solid rgba(122,155,114,0.2);
 }
-.quien-circle::before{
-  content:'';position:absolute;inset:18px;
-  border-radius:50%;border:1px solid rgba(122,155,114,0.25);
-}
-.quien-circle::after{
-  content:'';position:absolute;inset:40px;
-  border-radius:50%;border:1px solid rgba(196,149,106,0.15);
-}
+.quien-circle::before{ display:none; }
+.quien-circle::after{ display:none; }
 .quien-flor{opacity:0.18;position:relative;z-index:1;}
 
 /* Elementos flotantes alrededor del círculo */
@@ -722,6 +716,19 @@ footer{
   .servicios-grid{grid-template-columns:1fr;}
   .deco{display:none;}
 }
+
+/* ESTRELLAS PARPADEANTES */
+.estrella-parpadeo {
+  position: absolute;
+  pointer-events: none;
+  animation: parpadeo var(--dur, 3s) ease-in-out infinite var(--delay, 0s);
+  opacity: 0;
+}
+@keyframes parpadeo {
+  0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+  30%, 70% { opacity: var(--op, 0.6); transform: scale(1) rotate(20deg); }
+  50% { opacity: var(--op, 0.8); transform: scale(1.2) rotate(0deg); }
+}
 </style>
 </head>
 <body>
@@ -899,6 +906,26 @@ footer{
 <section id="quien" style="position:relative;z-index:1;background:#FAF8F4;">
   <div class="quien">
     <div class="quien-visual">
+
+      <!-- Estrellas parpadeantes -->
+      <div class="estrella-parpadeo" style="--dur:2.8s;--delay:0s;--op:0.7;top:30px;left:60px;color:#D4A844;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
+      <div class="estrella-parpadeo" style="--dur:3.5s;--delay:0.8s;--op:0.5;top:60px;right:50px;color:#E8C060;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
+      <div class="estrella-parpadeo" style="--dur:2.2s;--delay:1.4s;--op:0.6;bottom:80px;left:40px;color:#C89030;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
+      <div class="estrella-parpadeo" style="--dur:4s;--delay:0.3s;--op:0.4;bottom:50px;right:30px;color:#F0D070;">
+        <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
+      <div class="estrella-parpadeo" style="--dur:3.1s;--delay:2s;--op:0.5;top:45%;left:10px;color:#D4A844;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
+      <div class="estrella-parpadeo" style="--dur:2.6s;--delay:1s;--op:0.6;top:40%;right:5px;color:#E8C060;">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 14.4,9.2 22,9.2 16,14 18.4,21.2 12,17 5.6,21.2 8,14 2,9.2 9.6,9.2"/></svg>
+      </div>
       <div class="quien-deco-tl">
         <svg width="100" height="100" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1">
           <path d="M100 170 Q40 130 40 80 Q40 30 100 30 Q160 30 160 80 Q160 130 100 170Z"/>
@@ -906,7 +933,7 @@ footer{
         </svg>
       </div>
       <div class="quien-circle" style="background:none;box-shadow:none;border:none;">
-        <img src="/luna-logo.png?v=14" alt="Sibila 26" style="width:340px;height:340px;object-fit:contain;">
+        <img src="/luna-logo-dorado.png?v=1" alt="Sibila 26" style="width:340px;height:340px;object-fit:contain;">
       </div>
       <div class="quien-deco-br">
         <svg width="80" height="80" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2">
