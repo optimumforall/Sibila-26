@@ -735,10 +735,12 @@ footer{
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 48px;
-  max-width: 1000px;
+  gap: 32px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .tirada-cartas {
@@ -1133,7 +1135,7 @@ footer{
       </div>
 
       <div style="width:1px;height:200px;background:linear-gradient(to bottom,transparent,var(--verde-light),transparent);opacity:0.3;flex-shrink:0;"></div>
-      <!-- Ramillete dorso derecha -->
+      <!-- Ramillete dorso derecha - 5 diseños únicos -->
       <div class="tirada-cartas">
         <div class="carta-tirada" style="animation-delay:0.4s;transform:rotate(-18deg) translateX(-30px);left:0px;">
           <svg width="110" height="180" viewBox="0 0 110 180" fill="none">
