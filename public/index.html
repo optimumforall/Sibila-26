@@ -764,28 +764,46 @@ footer{
 .carta-tirada:nth-child(4) { animation-delay: 1.4s; transform: rotate(6deg) translateX(10px); left: 50px; }
 .carta-tirada:nth-child(5) { animation-delay: 1.8s; transform: rotate(18deg) translateX(30px); left: 65px; }
 
-/* RAMILLETE DE CARTAS EN EL HERO (estático, sin animación) */
-.hero-cartas{
+/* 2 FOTOS REALES EN EL HERO */
+.hero-fotos{
   position:relative;
-  width:150px;height:170px;
-  margin:0 auto 20px;
+  width:180px;height:170px;
+  margin:0 auto 24px;
 }
-.hero-carta{
-  position:absolute;top:0;left:0;
-  width:90px;
-  box-shadow:2px 4px 12px rgba(0,0,0,0.12);
-  border-radius:8px;
+.hero-foto{
+  position:absolute;
+  width:130px;height:130px;
+  object-fit:cover;
+  border-radius:6px;
+  border:4px solid #fff;
+  box-shadow:2px 6px 18px rgba(0,0,0,0.18);
 }
-.hero-carta img{width:100%;display:block;border-radius:8px;}
-.hero-carta:nth-child(1){transform:rotate(-16deg) translateX(-6px);left:0px;}
-.hero-carta:nth-child(2){transform:rotate(-8deg);left:16px;}
-.hero-carta:nth-child(3){transform:rotate(0deg);left:30px;z-index:3;box-shadow:3px 5px 16px rgba(0,0,0,.16);}
-.hero-carta:nth-child(4){transform:rotate(8deg);left:44px;}
-.hero-carta:nth-child(5){transform:rotate(16deg) translateX(6px);left:60px;}
+.hero-foto-1{top:0;left:0;transform:rotate(-8deg);z-index:1;}
+.hero-foto-2{top:14px;left:46px;transform:rotate(6deg);z-index:2;}
+
+/* TIRA ANCHA DE CARTAS DEL TAROT */
+.hero-tirada{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:8px;
+  max-width:600px;margin:0 auto 28px;
+}
+.hero-tirada img{
+  width:60px;
+  display:block;
+  border-radius:5px;
+  border:2px solid #fff;
+  box-shadow:1px 3px 8px rgba(0,0,0,.15);
+}
+.hero-tirada img:nth-child(3n+1){transform:rotate(-4deg);}
+.hero-tirada img:nth-child(3n+2){transform:rotate(0deg);}
+.hero-tirada img:nth-child(3n){transform:rotate(4deg);}
 
 @media(max-width:480px){
-  .hero-cartas{width:118px;height:135px;margin-bottom:16px;}
-  .hero-carta{width:70px;}
+  .hero-fotos{width:140px;height:130px;margin-bottom:18px;}
+  .hero-foto{width:100px;height:100px;}
+  .hero-foto-2{left:36px;top:10px;}
+  .hero-tirada{gap:6px;max-width:320px;margin-bottom:20px;}
+  .hero-tirada img{width:50px;}
   .hero{padding:90px 20px 70px;}
 }
 
@@ -941,12 +959,21 @@ footer{
     <div class="hero-divider-line"></div>
   </div>
 
-  <div class="hero-cartas fade-up d4" aria-hidden="true">
-    <div class="hero-carta"><img src="/carta-la-luna.png?v=1" alt=""></div>
-    <div class="hero-carta"><img src="/carta-sacerdotisa.png?v=1" alt=""></div>
-    <div class="hero-carta"><img src="/carta-la-estrella.png?v=1" alt=""></div>
-    <div class="hero-carta"><img src="/carta-el-sol.png?v=1" alt=""></div>
-    <div class="hero-carta"><img src="/carta-el-mundo.png?v=1" alt=""></div>
+  <div class="hero-fotos" aria-hidden="true">
+    <img src="/hero-foto-1.jpg?v=1" alt="" class="hero-foto hero-foto-1">
+    <img src="/hero-foto-2.jpg?v=1" alt="" class="hero-foto hero-foto-2">
+  </div>
+
+  <div class="hero-tirada" aria-hidden="true">
+    <img src="/carta-el-loco.png?v=1" alt="">
+    <img src="/carta-el-mago.png?v=1" alt="">
+    <img src="/carta-sacerdotisa.png?v=1" alt="">
+    <img src="/carta-la-estrella.png?v=1" alt="">
+    <img src="/carta-la-luna.png?v=1" alt="">
+    <img src="/carta-el-sol.png?v=1" alt="">
+    <img src="/carta-el-sol-b.png?v=1" alt="">
+    <img src="/carta-los-enamorados.png?v=1" alt="">
+    <img src="/carta-el-mundo.png?v=1" alt="">
   </div>
 
   <p class="hero-frase fade-up d4">
