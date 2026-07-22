@@ -764,24 +764,22 @@ footer{
 .carta-tirada:nth-child(4) { animation-delay: 1.4s; transform: rotate(6deg) translateX(10px); left: 50px; }
 .carta-tirada:nth-child(5) { animation-delay: 1.8s; transform: rotate(18deg) translateX(30px); left: 65px; }
 
-/* 2 FOTOS REALES EN EL HERO */
+/* 2 FOTOS REALES EN EL HERO - alineadas en paralelo */
 .hero-fotos{
-  position:relative;
-  width:180px;height:170px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
   margin:0 auto 24px;
 }
 .hero-foto{
-  position:absolute;
   width:130px;height:130px;
   object-fit:cover;
   border-radius:6px;
   border:4px solid #fff;
-  box-shadow:2px 6px 18px rgba(0,0,0,0.18);
+  box-shadow:1px 4px 14px rgba(0,0,0,0.15);
 }
-.hero-foto-1{top:0;left:0;transform:rotate(-8deg);z-index:1;}
-.hero-foto-2{top:14px;left:46px;transform:rotate(6deg);z-index:2;}
 
-/* TIRA ANCHA DE CARTAS DEL TAROT */
+/* TIRA ANCHA DE CARTAS DEL TAROT - alineadas y simétricas */
 .hero-tirada{
   display:flex;flex-wrap:wrap;justify-content:center;
   gap:8px;
@@ -794,14 +792,10 @@ footer{
   border:2px solid #fff;
   box-shadow:1px 3px 8px rgba(0,0,0,.15);
 }
-.hero-tirada img:nth-child(3n+1){transform:rotate(-4deg);}
-.hero-tirada img:nth-child(3n+2){transform:rotate(0deg);}
-.hero-tirada img:nth-child(3n){transform:rotate(4deg);}
 
 @media(max-width:480px){
-  .hero-fotos{width:140px;height:130px;margin-bottom:18px;}
+  .hero-fotos{gap:10px;margin-bottom:18px;}
   .hero-foto{width:100px;height:100px;}
-  .hero-foto-2{left:36px;top:10px;}
   .hero-tirada{gap:6px;max-width:320px;margin-bottom:20px;}
   .hero-tirada img{width:50px;}
   .hero{padding:90px 20px 70px;}
@@ -951,7 +945,7 @@ footer{
     Sibila<em> 26</em>
   </h1>
 
-  <p class="hero-sub fade-up d3">El espacio confidencial donde las cartas del Tarot tienen algo que decir</p>
+  <p class="hero-sub fade-up d3" style="text-transform:none;letter-spacing:0.02em;font-size:14px;">El espacio confidencial donde las cartas del Tarot tienen algo que decir</p>
   
     <div class="hero-divider fade-up d3">
     <div class="hero-divider-line"></div>
@@ -960,8 +954,8 @@ footer{
   </div>
 
   <div class="hero-fotos" aria-hidden="true">
-    <img src="/hero-foto-1.jpg?v=1" alt="" class="hero-foto hero-foto-1">
-    <img src="/hero-foto-2.jpg?v=1" alt="" class="hero-foto hero-foto-2">
+    <img src="/hero-foto-1.jpg?v=1" alt="" class="hero-foto">
+    <img src="/hero-foto-2.jpg?v=1" alt="" class="hero-foto">
   </div>
 
   <div class="hero-tirada" aria-hidden="true">
@@ -971,7 +965,6 @@ footer{
     <img src="/carta-la-estrella.png?v=1" alt="">
     <img src="/carta-la-luna.png?v=1" alt="">
     <img src="/carta-el-sol.png?v=1" alt="">
-    <img src="/carta-el-sol-b.png?v=1" alt="">
     <img src="/carta-los-enamorados.png?v=1" alt="">
     <img src="/carta-el-mundo.png?v=1" alt="">
   </div>
