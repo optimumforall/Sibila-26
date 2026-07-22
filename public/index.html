@@ -764,29 +764,28 @@ footer{
 .carta-tirada:nth-child(4) { animation-delay: 1.4s; transform: rotate(6deg) translateX(10px); left: 50px; }
 .carta-tirada:nth-child(5) { animation-delay: 1.8s; transform: rotate(18deg) translateX(30px); left: 65px; }
 
-/* FOTOS REALES DE CARTAS EN EL HERO */
-.hero-fotos{
+/* RAMILLETE DE CARTAS EN EL HERO (estático, sin animación) */
+.hero-cartas{
   position:relative;
-  width:180px;height:170px;
-  margin:0 auto 24px;
+  width:150px;height:170px;
+  margin:0 auto 20px;
 }
-.hero-foto{
-  position:absolute;
-  width:130px;height:130px;
-  object-fit:cover;
-  border-radius:6px;
-  border:4px solid #fff;
-  box-shadow:2px 6px 18px rgba(0,0,0,0.18);
-  opacity:0;
-  animation:salidaCarta .7s ease forwards;
+.hero-carta{
+  position:absolute;top:0;left:0;
+  width:90px;
+  box-shadow:2px 4px 12px rgba(0,0,0,0.12);
+  border-radius:8px;
 }
-.hero-foto-1{top:0;left:0;transform:rotate(-8deg);z-index:1;animation-delay:.2s;}
-.hero-foto-2{top:14px;left:46px;transform:rotate(6deg);z-index:2;animation-delay:.5s;}
+.hero-carta img{width:100%;display:block;border-radius:8px;}
+.hero-carta:nth-child(1){transform:rotate(-16deg) translateX(-6px);left:0px;}
+.hero-carta:nth-child(2){transform:rotate(-8deg);left:16px;}
+.hero-carta:nth-child(3){transform:rotate(0deg);left:30px;z-index:3;box-shadow:3px 5px 16px rgba(0,0,0,.16);}
+.hero-carta:nth-child(4){transform:rotate(8deg);left:44px;}
+.hero-carta:nth-child(5){transform:rotate(16deg) translateX(6px);left:60px;}
 
 @media(max-width:480px){
-  .hero-fotos{width:140px;height:130px;margin-bottom:18px;}
-  .hero-foto{width:100px;height:100px;}
-  .hero-foto-2{left:36px;top:10px;}
+  .hero-cartas{width:118px;height:135px;margin-bottom:16px;}
+  .hero-carta{width:70px;}
   .hero{padding:90px 20px 70px;}
 }
 
@@ -928,18 +927,13 @@ footer{
     </svg>
   </div>
 
-  <div class="hero-fotos" aria-hidden="true">
-    <img src="/hero-foto-cartas-1.jpg?v=1" alt="" class="hero-foto hero-foto-1">
-    <img src="/hero-foto-cartas-2.jpg?v=1" alt="" class="hero-foto hero-foto-2">
-  </div>
-
-  <p class="hero-eyebrow fade-up d1">Tarot · Reiki · Acompañamiento Holístico</p>
+  <p class="hero-eyebrow fade-up d1">Tarot</p>
 
   <h1 class="fade-up d2" style="margin-top:8px;">
     Sibila<em> 26</em>
   </h1>
 
-  <p class="hero-sub fade-up d3">El espacio sagrado donde te cuidan de verdad</p>
+  <p class="hero-sub fade-up d3">El espacio confidencial donde las cartas del Tarot tienen algo que decir</p>
   
     <div class="hero-divider fade-up d3">
     <div class="hero-divider-line"></div>
@@ -947,9 +941,16 @@ footer{
     <div class="hero-divider-line"></div>
   </div>
 
+  <div class="hero-cartas fade-up d4" aria-hidden="true">
+    <div class="hero-carta"><img src="/carta-la-luna.png?v=1" alt=""></div>
+    <div class="hero-carta"><img src="/carta-sacerdotisa.png?v=1" alt=""></div>
+    <div class="hero-carta"><img src="/carta-la-estrella.png?v=1" alt=""></div>
+    <div class="hero-carta"><img src="/carta-el-sol.png?v=1" alt=""></div>
+    <div class="hero-carta"><img src="/carta-el-mundo.png?v=1" alt=""></div>
+  </div>
+
   <p class="hero-frase fade-up d4">
-    Aquí no hay respuestas mágicas.<br>
-    Solo presencia real y escucha activa.
+    Lectura exclusiva para ti, para que le preguntes al Tarot tus dudas, tus preocupaciones
   </p>
 
   <div class="hero-btns fade-up d5">
@@ -963,6 +964,7 @@ footer{
   </div>
 
   <div class="hero-scroll">
+
     <div class="scroll-bar"></div>
     <span>Descubrir</span>
   </div>
