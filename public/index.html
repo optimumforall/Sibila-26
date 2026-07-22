@@ -764,29 +764,29 @@ footer{
 .carta-tirada:nth-child(4) { animation-delay: 1.4s; transform: rotate(6deg) translateX(10px); left: 50px; }
 .carta-tirada:nth-child(5) { animation-delay: 1.8s; transform: rotate(18deg) translateX(30px); left: 65px; }
 
-/* 2 FOTOS REALES EN EL HERO - alineadas en paralelo */
+/* 2 FOTOS REALES EN EL HERO - completas, sin recortar */
 .hero-fotos{
   display:flex;
-  gap:14px;
+  gap:10px;
   justify-content:center;
-  margin:0 auto 24px;
+  margin:0 auto 18px;
 }
 .hero-foto{
-  width:130px;height:130px;
-  object-fit:cover;
+  height:140px;width:auto;
+  object-fit:contain;
   border-radius:6px;
-  border:4px solid #fff;
+  border:3px solid #fff;
   box-shadow:1px 4px 14px rgba(0,0,0,0.15);
 }
 
 /* TIRA ANCHA DE CARTAS DEL TAROT - alineadas y simétricas */
 .hero-tirada{
   display:flex;flex-wrap:wrap;justify-content:center;
-  gap:8px;
-  max-width:600px;margin:0 auto 28px;
+  gap:6px;
+  max-width:600px;margin:0 auto 18px;
 }
 .hero-tirada img{
-  width:60px;
+  width:50px;
   display:block;
   border-radius:5px;
   border:2px solid #fff;
@@ -794,11 +794,14 @@ footer{
 }
 
 @media(max-width:480px){
-  .hero-fotos{gap:10px;margin-bottom:18px;}
-  .hero-foto{width:100px;height:100px;}
-  .hero-tirada{gap:6px;max-width:320px;margin-bottom:20px;}
-  .hero-tirada img{width:50px;}
-  .hero{padding:90px 20px 70px;}
+  .hero-fotos{gap:8px;margin-bottom:12px;}
+  .hero-foto{height:100px;}
+  .hero-tirada{gap:4px;max-width:320px;margin-bottom:14px;}
+  .hero-tirada img{width:36px;}
+  .hero{padding:70px 20px 50px;}
+  .hero-sub{margin-bottom:18px;}
+  .hero-divider{margin:0 auto 18px;}
+  .hero-frase{margin:0 auto 22px;}
 }
 
 @keyframes salidaCarta {
